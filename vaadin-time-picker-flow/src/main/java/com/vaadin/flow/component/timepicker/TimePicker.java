@@ -302,6 +302,54 @@ public class TimePicker extends GeneratedVaadinTimePicker<TimePicker, LocalTime>
     }
 
     /**
+     * Is use 12 hours format
+     * <table>
+     *     <tr>
+     *         <td>Value</td>
+     *         <td>Format</td>
+     *     </tr>
+     *     <tr>
+     *         <td>true</td>
+     *         <td>11:23:45 PM</td>
+     *     </tr>
+     *     <tr>
+     *         <td>false</td>
+     *         <td>23:23:45 PM</td>
+     *     </tr>
+     *
+     * </table>
+     *
+     * @param hour12 use 12 hours format
+     */
+    public void setHour12Format(boolean hour12) {
+        super.setHour12Format(hour12);
+    }
+
+    /**
+     * Is use 24 hours format
+     * <table>
+     *     <tr>
+     *         <td>Value</td>
+     *         <td>Format</td>
+     *     </tr>
+     *     <tr>
+     *         <td>true</td>
+     *         <td>23:23:45 PM</td>
+     *     </tr>
+     *     <tr>
+     *         <td>false</td>
+     *         <td>11:23:45 PM</td>
+     *     </tr>
+     *
+     * </table>
+     *
+     * @param hour24 use 24 hours format
+     */
+    public void setHour24Format(boolean hour24) {
+        super.setHour12Format(!hour24);
+    }
+
+    /**
      * Gets the step of the time picker.
      *
      * <p>

@@ -649,6 +649,30 @@ public abstract class GeneratedVaadinTimePicker<R extends GeneratedVaadinTimePic
     }
 
     /**
+     * Is use 12 hours format
+     * <table>
+     *     <tr>
+     *         <td>Value</td>
+     *         <td>Format</td>
+     *     </tr>
+     *     <tr>
+     *         <td>true</td>
+     *         <td>11:23:45 PM</td>
+     *     </tr>
+     *     <tr>
+     *         <td>false</td>
+     *         <td>23:23:45 PM</td>
+     *     </tr>
+     *
+     * </table>
+     *
+     * @param hour12 use 12 hours format
+     */
+    protected void setHour12Format(boolean hour12) {
+        getElement().setProperty("hour12", hour12);
+    }
+
+    /**
      * <p>
      * Description copied from corresponding location in WebComponent:
      * </p>

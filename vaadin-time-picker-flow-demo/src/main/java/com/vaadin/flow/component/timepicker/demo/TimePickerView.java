@@ -51,6 +51,8 @@ public class TimePickerView extends DemoView {
         createWithClearButton();
         createTimePickerWithStepSetting();
         createTimePickerWithMinAndMaxSetting();
+        createHour12Format();
+        createHour24Format();
     }
 
     private void createLocalizedTimePicker() {
@@ -268,5 +270,39 @@ public class TimePickerView extends DemoView {
                 getElement().executeJs(expression, getElement());
             }
         }
+    }
+
+    private void createHour24Format() {
+        Div message = createMessageDiv("24-hours-picker-message");
+        // begin-source-example
+        // source-example-heading: Default Time Picker
+        TimePicker timePicker = new TimePicker();
+        timePicker.setHour24Format(true);
+        timePicker.setLocale(Locale.getDefault());
+        timePicker.setValue(LocalTime.of(23,44,55));
+
+        timePicker.addValueChangeListener(
+                event -> updateMessage(message, timePicker));
+        // end-source-example
+
+        timePicker.setId("24-hours-picker");
+        addCard("24 Hours Time Picker", timePicker, message);
+    }
+
+    private void createHour12Format() {
+        Div message = createMessageDiv("12-hours-picker-message");
+        // begin-source-example
+        // source-example-heading: Default Time Picker
+        TimePicker timePicker = new TimePicker();
+        timePicker.setHour12Format(true);
+        timePicker.setLocale(Locale.getDefault());
+        timePicker.setValue(LocalTime.of(23,44,55));
+
+        timePicker.addValueChangeListener(
+                event -> updateMessage(message, timePicker));
+        // end-source-example
+
+        timePicker.setId("12-hours-picker");
+        addCard("12 Hours Time Picker", timePicker, message);
     }
 }

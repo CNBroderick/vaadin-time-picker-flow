@@ -137,6 +137,7 @@
                     // calculate the format options if none done cached or step has changed
                     if (!cachedOptions || cachedStep !== timepicker.step) {
                         cachedOptions = {
+                            hour12: timepicker.hour12 === null || timepicker.hour12 === undefined || timepicker.hour12,
                             hour: "numeric",
                             minute: "numeric",
                             second: includeSeconds() ? "numeric" : undefined,
